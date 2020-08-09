@@ -12,7 +12,7 @@ class Message
   end
 
   def self.missing_token
-    'Missing token'
+    'Missing token, login required!'
   end
 
   def self.unauthorized
@@ -29,5 +29,9 @@ class Message
 
   def self.expired_token
     'Sorry, your token has expired. Please login to continue.'
+  end
+
+  def self.params_cannot_null
+    'Params cannot null'
   end
 end
