@@ -1,0 +1,2 @@
+module UserBalancesHelper
+end

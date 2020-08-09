@@ -1,0 +1,57 @@
+<%= form_with(model: bank_history, local: true) do |form| %>
+  <% if bank_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bank_history.errors.count, "error") %> prohibited this bank_history from being saved:</h2>
+
+      <ul>
+      <% bank_history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :balance_bank_id %>
+    <%= form.number_field :balance_bank_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balance_before %>
+    <%= form.number_field :balance_before %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balance_after %>
+    <%= form.number_field :balance_after %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity %>
+    <%= form.text_field :activity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ip %>
+    <%= form.text_field :ip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_agent %>
+    <%= form.text_field :user_agent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

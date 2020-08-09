@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_balance_id: 1
+  balance_before: 1
+  balance_after: 1
+  activity: MyString
+
+two:
+  user_balance_id: 1
+  balance_before: 1
+  balance_after: 1
+  activity: MyString

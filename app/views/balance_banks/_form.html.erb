@@ -1,0 +1,37 @@
+<%= form_with(model: balance_bank, local: true) do |form| %>
+  <% if balance_bank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(balance_bank.errors.count, "error") %> prohibited this balance_bank from being saved:</h2>
+
+      <ul>
+      <% balance_bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :balance %>
+    <%= form.number_field :balance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balance_achieve %>
+    <%= form.number_field :balance_achieve %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enable %>
+    <%= form.check_box :enable %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

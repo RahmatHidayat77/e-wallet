@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User balance:</strong>
+  <%= @user_balance_history.user_balance_id %>
+</p>
+
+<p>
+  <strong>Balance before:</strong>
+  <%= @user_balance_history.balance_before %>
+</p>
+
+<p>
+  <strong>Balance after:</strong>
+  <%= @user_balance_history.balance_after %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @user_balance_history.activity %>
+</p>
+
+<%= link_to 'Edit', edit_user_balance_history_path(@user_balance_history) %> |
+<%= link_to 'Back', user_balance_histories_path %>

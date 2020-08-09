@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Balance bank:</strong>
+  <%= @bank_history.balance_bank_id %>
+</p>
+
+<p>
+  <strong>Balance before:</strong>
+  <%= @bank_history.balance_before %>
+</p>
+
+<p>
+  <strong>Balance after:</strong>
+  <%= @bank_history.balance_after %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @bank_history.activity %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @bank_history.ip %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @bank_history.location %>
+</p>
+
+<p>
+  <strong>User agent:</strong>
+  <%= @bank_history.user_agent %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @bank_history.author %>
+</p>
+
+<%= link_to 'Edit', edit_bank_history_path(@bank_history) %> |
+<%= link_to 'Back', bank_histories_path %>

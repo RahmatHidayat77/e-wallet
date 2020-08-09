@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bank Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Balance bank</th>
+      <th>Balance before</th>
+      <th>Balance after</th>
+      <th>Activity</th>
+      <th>Ip</th>
+      <th>Location</th>
+      <th>User agent</th>
+      <th>Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bank_histories.each do |bank_history| %>
+      <tr>
+        <td><%= bank_history.balance_bank_id %></td>
+        <td><%= bank_history.balance_before %></td>
+        <td><%= bank_history.balance_after %></td>
+        <td><%= bank_history.activity %></td>
+        <td><%= bank_history.ip %></td>
+        <td><%= bank_history.location %></td>
+        <td><%= bank_history.user_agent %></td>
+        <td><%= bank_history.author %></td>
+        <td><%= link_to 'Show', bank_history %></td>
+        <td><%= link_to 'Edit', edit_bank_history_path(bank_history) %></td>
+        <td><%= link_to 'Destroy', bank_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bank History', new_bank_history_path %>

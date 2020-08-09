@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Balances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Balance</th>
+      <th>Balanceachive</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_balances.each do |user_balance| %>
+      <tr>
+        <td><%= user_balance.userId %></td>
+        <td><%= user_balance.balance %></td>
+        <td><%= user_balance.balanceAchive %></td>
+        <td><%= link_to 'Show', user_balance %></td>
+        <td><%= link_to 'Edit', edit_user_balance_path(user_balance) %></td>
+        <td><%= link_to 'Destroy', user_balance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Balance', new_user_balance_path %>

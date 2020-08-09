@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Balance Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User balance</th>
+      <th>Balance before</th>
+      <th>Balance after</th>
+      <th>Activity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_balance_histories.each do |user_balance_history| %>
+      <tr>
+        <td><%= user_balance_history.user_balance_id %></td>
+        <td><%= user_balance_history.balance_before %></td>
+        <td><%= user_balance_history.balance_after %></td>
+        <td><%= user_balance_history.activity %></td>
+        <td><%= link_to 'Show', user_balance_history %></td>
+        <td><%= link_to 'Edit', edit_user_balance_history_path(user_balance_history) %></td>
+        <td><%= link_to 'Destroy', user_balance_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Balance History', new_user_balance_history_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @balance_bank.balance %>
+</p>
+
+<p>
+  <strong>Balance achieve:</strong>
+  <%= @balance_bank.balance_achieve %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @balance_bank.code %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @balance_bank.enable %>
+</p>
+
+<%= link_to 'Edit', edit_balance_bank_path(@balance_bank) %> |
+<%= link_to 'Back', balance_banks_path %>

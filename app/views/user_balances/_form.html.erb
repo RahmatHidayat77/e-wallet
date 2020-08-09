@@ -1,0 +1,32 @@
+<%= form_with(model: user_balance, local: true) do |form| %>
+  <% if user_balance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_balance.errors.count, "error") %> prohibited this user_balance from being saved:</h2>
+
+      <ul>
+      <% user_balance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :userId %>
+    <%= form.number_field :userId %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balance %>
+    <%= form.number_field :balance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balanceAchive %>
+    <%= form.number_field :balanceAchive %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
