@@ -191,7 +191,7 @@ class Api::TransactionController < ApplicationController
     end
 
     def purchase
-        if topup_params[:email].present?
+        if purchase_params[:email].present?
             code = ('a'..'z').to_a.shuffle[0,8].join
 
             user = User.where(email: purchase_params[:email]).first
@@ -235,17 +235,17 @@ class Api::TransactionController < ApplicationController
 
                 value = current_balance_bank.balance - purchase_params[:nominal].to_i
 
-                new_balance_bank = BalanceBank.create(balance: value, balance_achieve: -topup_params[:nominal].to_i, code: code, enable: true)
+                new_balance_bank = BalanceBank.create(balance: value, balance_achieve: -purchase_params[:nominal].to_i, code: code, enable: true)
 
                 balance_bank_history_params = {
                     balance_bank_id: new_balance_bank.id,
                     balance_before: current_balance_bank.balance,
                     balance_after: new_balance_bank.balance,
-                    activity: topup_params[:activity],
+                    activity: purchase_params[:activity],
                     type: BankHistory.types.keys.first,
                     ip: remote_ip(),
                     location: location(),
-                    user_agent: topup_params[:user_agent],
+                    user_agent: purchase_params[:user_agent],
                     author: user.email
                 }
                 balance_bank_history = BankHistory.new(balance_bank_history_params)
@@ -269,6 +269,6 @@ class Api::TransactionController < ApplicationController
     end
 
     def purchase_params
-        params.permit(:email, :nominal, :activity)
+        params.permit(:email, :nominal, :activity, :user_agent)
     end
 end
