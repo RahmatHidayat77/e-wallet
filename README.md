@@ -19,6 +19,8 @@ This simple app using Ruby language and Ruby on Rails framework.
 
 * run `rails db:migrate` to migrate all DB schema
 
+* run `rails db:seed` to seed existing data on `db/seeds.rb` (optional)
+
 * run `rails server` to fire up application
 
 ## Available API list :
