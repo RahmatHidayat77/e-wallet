@@ -34,4 +34,13 @@ class Message
   def self.params_cannot_null
     'Params cannot null'
   end
+  def self.not_have_balance
+    'Sorry, your balance is zero. Please topup first'
+  end
+  def self.top_up_success
+    'Top Up successfully'
+  end
+  def self.transfer_success(receiver)
+    "Transfer to #{receiver} successfully"
+  end
 end
