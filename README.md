@@ -35,6 +35,8 @@ params :
 `email`  
 `password`   
 
+* No logout API, because it use JWT token. JWT token is save on client side, to logout just delete the token. And then user not have permission to the below API.
+
 * `api/topup`  ---> use to topup balance of user    
 header :     
 `Authorization`   (Bearer xxxx) get bearer token from `/api/auth/login` response     
