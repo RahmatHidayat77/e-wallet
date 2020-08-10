@@ -41,7 +41,7 @@ class Api::TransactionController < ApplicationController
                     user_agent: topup_params[:user_agent],
                     author: user.email
                 }
-                balance_bank_history = BankHistory.new(balance_history_params)
+                balance_bank_history = BankHistory.new(balance_bank_history_params)
                 balance_bank_history.save!
 
             else
@@ -91,6 +91,10 @@ class Api::TransactionController < ApplicationController
                 }
                 balance_bank_history = BankHistory.new(balance_bank_history_params)
                 balance_bank_history.save!
+            end
+
+            if new_user_balance.nil?
+                new_user_balance = user_balance
             end
 
             response = { message: Message.top_up_success, balance: new_user_balance.balance }
