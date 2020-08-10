@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
     post 'topup', to: 'transaction#topup'
     post 'transfer', to: 'transaction#transfer'
+    post 'purchase', to: 'transaction#purchase'
 
   end
   

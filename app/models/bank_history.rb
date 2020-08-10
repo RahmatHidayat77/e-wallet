@@ -1,3 +1,7 @@
 class BankHistory < ApplicationRecord
-    belongs_to :bank_history
+    self.inheritance_column = nil
+
+    belongs_to :balance_bank
+
+    enum type: {credit: 'credit', debit: 'debit'}
 end

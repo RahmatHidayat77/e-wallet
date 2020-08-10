@@ -40,6 +40,9 @@ class Message
   def self.top_up_success
     'Top Up successfully'
   end
+  def self.purchase_success
+    'Purchase successfully'
+  end
   def self.transfer_success(receiver)
     "Transfer to #{receiver} successfully"
   end
