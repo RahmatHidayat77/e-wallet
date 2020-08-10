@@ -25,10 +25,10 @@ This simple app using Ruby language and Ruby on Rails framework.
 
 * `/api/signup`  ---> use to signup to app and create account  
 params :  
-`username`  
-`email`
-`password`
-`password_confirmation`  
+`username`     
+`email`      
+`password`     
+`password_confirmation`      
 
 * `/api/auth/login` ---> use to login into app, and get bearer token   
 params :    
